@@ -1,0 +1,18 @@
+{% extends 'logar.html'%}
+{% load static %}
+
+{% block conteine1 %}
+
+ <form action="{% url 'Novo_user'%}" method="POST"> {% csrf_token%}
+     <label>Usuario</label>
+     <input type="text" name="Usuario" placeholder="Nome de Usuario" required autocomplete="off">
+     <label>Senha</label>
+     <input type="password" name="Senha" placeholder="Senha" required autocomplete="off">
+     <label>Número</label>
+     <input type="tel" name="celular" placeholder="(21) 000000000" required autocomplete="off">
+
+     <a href="{% url 'logar'%}" class="Criar_conta">Já tem uma conta?</a>
+     <input type="submit" value="Criar" class="enviar">
+</form>
+
+{% endblock %}

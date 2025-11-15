@@ -1,0 +1,19 @@
+{% extends 'add.html'%}
+{% load static %}
+
+{% block title %}
+informações
+{% endblock %}
+
+{% block form %}
+    <form id="form_edicao" action="{% url 'detalhe_aluno' aluno.id %}" method="POST"> {% csrf_token %}
+        {{edicao}}
+        <input id="Salvar" class="botao" type="submit" value="Salvar">
+     </form>
+     <button id="Editar">Ir Para Edição</button>
+     <form class="Form_excluir" action="{% url 'Excluir' aluno.id %}"method="POST" >
+        {% csrf_token %}
+        <input type="submit" class="Excluir" value="Excluir">
+     </form>
+     <script src="{% static 'js/detalhes.js'%}" ></script>
+{% endblock %}

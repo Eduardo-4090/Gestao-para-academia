@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    justify-content: center;
+    color: black;
+    background-color: rgb(110, 110, 110);
+}
+
+.conteine{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80vw;
+    height: 99vh;
+    background-color: rgba(80, 80, 80, 0.171);
+
+}
+.nome, .sobrenome, .celular, .cpf_rg, .nascimento, .vencimento{
+display: flex;
+width: 50vw;
+border: solid black;
+font-size: 40px;
+margin-top: 10px;
+
+} 
+label{
+    font-size: 40px;
+}
+.botao{
+    background-color: blue;
+    width: 20vw ;
+    min-width: 180px;
+    margin: 20px;
+    font-size: 50px;
+    color: white;
+}
+#Editar{
+    background-color: rgba(0, 0, 255, 0.568);
+    width: 28vw ;
+    height: 80px;
+    min-width: 250px;
+    font-size: 37px;
+    color: white;
+    border-radius: 20px;
+    margin: 50px;
+}
+form{
+    text-align: center;
+}
+input[type = 'date']::-webkit-calendar-picker-indicator{
+    display: none;
+}
+input{
+    border-radius: 15px;
+}
+.Excluir{
+    color: white;
+    background-color: rgba(255, 0, 0, 0.5);
+    width: 20vw ;
+    height: 50px;
+    min-width: 150px;
+    font-size: 37px;
+    color: rgb(0, 0, 0);
+    border-radius: 20px;
+    text-decoration-line: none;
+    text-align: center;
+    margin: 30px;
+}
+.alert { 
+     padding: 15px; 
+     margin: 10px 0; 
+     border-radius: 50px;
+     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+     font-size: 20px;
+    }
+.alert-success {
+     background-color: #d4edda; 
+     color: #155724; 
+    }
+.alert-error { 
+    background-color: #f8d7da; 
+    color: #721c24; 
+}
+
+@media (max-width: 768px) {
+    .conteine {
+        width: 95vw;
+        height: auto;
+    }
+    .nome, .sobrenome, .celular, .cpf_rg, .nascimento, .vencimento {
+        width: 90vw;
+        font-size: 25px; /* menor que 40px original */
+    }
+    label {
+        font-size: 25px; /* menor que 40px original */
+    }
+    .botao {
+        width: 50vw;
+        font-size: 30px; /* menor que 50px original */
+    }
+    #Editar {
+        width: 60vw;
+        height: 60px;
+        font-size: 25px; 
+        margin: 20px;
+    }
+    .Excluir {
+        width: 45px;
+        height: 45px;
+        font-size: 25px; 
+    }
+    input {
+        font-size: 18px; /* reduzindo proporcionalmente */
+        padding: 5px;
+        
+    }
+}

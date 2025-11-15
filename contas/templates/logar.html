@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,">
+    <title>login</title>
+    <link rel="stylesheet" href="{% static 'contas/contas.css' %}">
+</head>
+<body>
+    <h1>Gestão de Academia</h1>
+     {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    <div class="conteine1">
+        {% block conteine1 %}
+            <form action="{% url 'logar'%}" method="POST"> {% csrf_token%}
+                <label>Usuario</label>
+                <input type="text" name="Usuario" placeholder="Nome de Usuario" required autocomplete="off">
+
+                <label>Senha</label>
+                <input type="password" name="Senha" placeholder="Senha" required autocomplete="off">
+
+                <a href="{% url 'Novo_user'%}" class="Criar_conta">Cria uma Conta</a>
+                <input type="submit" value="Login" class="enviar" >
+            </form>
+        {% endblock %}
+    </div>
+    <script src="{% static 'js/contas.js' %}"></script>
+</body>
+</html>
