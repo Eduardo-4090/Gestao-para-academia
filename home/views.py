@@ -4,6 +4,10 @@ from .forms import AlunoForms
 from .models import Alunos
 from django.contrib import messages 
 
+def intro (request):
+    messages.error(request,'Ainda não temos Plano Premium')
+    return render(request, 'intro.html')
+
 @login_required
 def home (request):
     alunos = Alunos.objects.filter(dono = request.user).order_by('data_vencimento')

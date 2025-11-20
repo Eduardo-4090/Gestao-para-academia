@@ -16,7 +16,7 @@ load_dotenv( BASE_DIR / '.env')
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -44,7 +44,7 @@ AXES_FAILURE_LIMIT = 3                     # número de tentativas permitidas
 AXES_LOCK_OUT_AT_FAILURE = True   #bloqueia dps que a as tentativas são excedidas
 AXES_COOLOFF_TIME = timedelta(minutes=1)   # bloqueia por 1 minuto
 AXES_LOCKOUT_PARAMETERS =['ip_address']  # bloqueia por ip
-AXES_LOCKOUT_URL = '/'
+AXES_LOCKOUT_URL = '/login/'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -130,9 +130,9 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR , 'static')]
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-SECURE_SSL_REDIRECT = True
+"""SECURE_SSL_REDIRECT = True
 SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True"""
 
 
 # Default primary key field type

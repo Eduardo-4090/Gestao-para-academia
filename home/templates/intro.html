@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INTRODUÇÃO - GymGestor</title>
+    <link rel="stylesheet" href="{% static 'css/intro.css'%}"> 
+</head>
+<body>
+
+    <div class="container">
+        <h1>🚀 Bem-vindo ao GymGestor!</h1>
+        {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+        <p class="callout">
+            O <strong>GymGestor</strong> é a ferramenta definitiva para simplificar e otimizar a gestão de alunos e o controle de mensalidades de sua instituição. Chega de planilhas complexas e atrasos: nossa plataforma foi desenvolvida para oferecer uma <strong>visão clara e imediata</strong> do status financeiro de sua base de estudantes.
+        </p>
+        
+        <h2>✨ Como a Gestão Funciona</h2>
+        
+        <p>Para garantir a <strong>segurança</strong> e a <strong>personalização</strong> dos dados, o acesso a todas as funcionalidades do sistema é feito através da <strong>criação de uma conta</strong> individual.</p>
+
+        <h3>🚦 Controle Visual de Vencimentos</h3>
+        
+        <p>Nosso painel foi projetado para que você identifique rapidamente as prioridades de cobrança:</p>
+        
+        <ul class="color-status">
+            <li><span class="dot green-dot"></span> <strong>Verde:</strong> A mensalidade está em dia, com mais de 5 dias até o vencimento.</li>
+            <li><span class="dot yellow-dot"></span> <strong>Amarelo:</strong> Atenção! A mensalidade está a menos de 5 dias do vencimento.</li>
+            <li><span class="dot red-dot"></span> <strong>Vermelho:</strong> A mensalidade venceu.</li>
+        </ul>
+        <img src="{% static 'img/foto_exemplo.png' %}">
+
+        <p>Para maximizar sua eficiência, a <strong>tabela de alunos</strong> prioriza automaticamente, exibindo os estudantes com a mensalidade mais próxima de vencer no topo da lista.</p>
+
+        <h3>📋 Gerenciamento Detalhado do Aluno</h3>
+        <p>Ao lado de cada aluno na tabela, você encontrará o botão "<strong>Ver Aluno</strong>". Com um clique, você acessa uma página completa onde pode <strong>visualizar</strong>, <strong>editar</strong> ou <strong>excluir</strong> todas as informações do registro.</p>
+        
+        <hr>
+
+        <h2>🔑 Planos de Acesso</h2>
+        
+        <p>Oferecemos um modelo flexível para atender às suas necessidades:</p>
+
+        <div class="plan-box">
+            <a href="{% url 'logar' %}" class="plan-link">
+                <div class="plan free-plan">
+                    <h3>Plano Free (Gratuito)</h3>
+                    <p>Permite o cadastro de até 5 alunos por usuário.</p>
+                    <p><strong>Restrição:</strong> Os campos de <strong>CPF</strong> e <strong>Número de Celular</strong> são bloqueados nesta versão.</p>
+                </div>
+            </a>
+            <a href="{% url 'introducao'%}" class="plan-link">
+                <div class="plan premium-plan">
+                    <h3>Planos Premium</h3>
+                    <p>Desbloqueie o cadastro de <strong>alunos ilimitados</strong>, acesse <strong>todos os campos</strong> de dados (incluindo CPF e Celular) e muito mais!</p>
+                    <p><strong>Comece hoje mesmo a transformar a forma como você gerencia sua instituição!</strong></p>
+                </div>
+            </a>
+        </div>
+        
+        <hr>
+
+        <h2>🔒 Sua Segurança em Primeiro Lugar</h2>
+        <p>Levamos a segurança do seu acesso a sério. Durante o login, se a senha for inserida incorretamente mais de 3 vezes, o acesso será automaticamente bloqueado por 1 minuto. Esta medida protege sua conta contra tentativas de acesso não autorizadas.</p>
+
+        <p class="final-call-to-action">
+            Crie sua conta e experimente o poder do GymGestor!
+        </p>
+
+    </div>
+    <script src="{% static 'js/intro.js'%}"></script>
+</body>
+</html>
