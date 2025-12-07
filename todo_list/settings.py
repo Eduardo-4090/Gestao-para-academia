@@ -40,7 +40,7 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 AXES_ENABLED = True
-AXES_FAILURE_LIMIT = 3                     # número de tentativas permitidas
+AXES_FAILURE_LIMIT = 4                     # número de tentativas permitidas
 AXES_LOCK_OUT_AT_FAILURE = True   #bloqueia dps que a as tentativas são excedidas
 AXES_COOLOFF_TIME = timedelta(minutes=1)   # bloqueia por 1 minuto
 AXES_LOCKOUT_PARAMETERS =['ip_address']  # bloqueia por ip
